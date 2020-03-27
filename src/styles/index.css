@@ -2,8 +2,27 @@
 
 @tailwind components;
 
-@tailwind utilities;
-
 body{
   @apply bg-gray-300;
 }
+
+.btn{
+  @apply inline-block text-sm px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold;
+}
+.btn:focus{
+  @apply outline-none shadow-outline;
+}
+
+
+.btn-indigo{
+  @apply bg-indigo-500 text-white;
+}
+.btn-indigo:hover{
+  @apply bg-indigo-400;
+}
+
+.btn-indigo:active{
+  @apply bg-indigo-600;
+}
+
+@tailwind utilities;
