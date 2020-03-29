@@ -7,11 +7,14 @@ const Layout = (props) => {
 
   return (
     <div>
-      <Header />
-      <main>
+
+      <main className="min-h-screen relative z-10" style={{
+          background: '#f7fafc'
+        }}>
+        <Header />
         {props.children}
       </main>
-      <Footer />
+      <Footer className="z-0"/>
     </div>
   )
 }
