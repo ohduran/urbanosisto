@@ -1,32 +1,41 @@
 import React from "react";
 import '../styles/index.css';
-import clarisse_meyer_d6pLNFVZt_4_unsplash from '../images/clarisse-meyer-d6pLNFVZt_4-unsplash.jpg'
-import artyom_kim_icLFsEzM_G0_unsplash from '../images/artyom-kim-icLFsEzM-G0-unsplash.jpg'
+import Layout from '../components/Layout';
+import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
+import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 
-const IndexPage = () => {
+export default class extends React.Component {
 
-  return (
-    <div className="flex bg-gray-100">
-      <div className="bg-gray-100 px-8 py-12 mx-auto max-w-md sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12">
-        <div className="xl:max-w-lg xl:ml-auto">
-          <img className="h-16" src={clarisse_meyer_d6pLNFVZt_4_unsplash} alt="clarisse meyer" />
-          <img className="mt-6 sm:mt-8 rounded-lg shadow-xl h-64 w-full object-cover object-top lg:hidden" src={artyom_kim_icLFsEzM_G0_unsplash} alt="dmitriy ilkevich" />
-          <h1 className="font-bold text-grey-900 leading-tight mt-6 sm:mt-8 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl">
-            Las calles son tuyas.
-            <br className="hidden xl:inline" /><span className="text-indigo-500"> Muévete.</span>
-          </h1>
-          <p className="mt-2 sm:mt-4 text-grey-600 sm:text-xl">Confía en ti misma. Habla por ti misma. Sé tú misma.</p>
-          <div className="mt-4 sm:mt-6">
-            <a href="#" className="btn btn-indigo sm:text-base">Suscríbete</a>
-          </div>
-        </div>
-      </div>
-      <div className="hidden lg:block lg:w-1/2 lg:relative">
-        <img className="absolute inset-0 h-full w-full object-cover object-top"
-            src={artyom_kim_icLFsEzM_G0_unsplash} alt="dmitriy ilkevich" />
-      </div>
-    </div>
-  )
+    // componentDidMount (props) {
+    //   var vid = document.getElementById("bgvid");
+    //
+    //   if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    //       vid.removeAttribute("autoplay");
+    //       vid.pause();
+    //   }
+    //
+    //   function vidFade() {
+    //     vid.classList.add("stopfade");
+    //   }
+    //
+    //   vid.addEventListener('ended', function()
+    //   {
+    //   // only functional if "loop" is removed
+    //   vid.pause();
+    //   // to capture IE10
+    //   vidFade();
+    //   });
+    // }
+
+  render () {
+    return (
+      <Layout>
+        {/*
+        <video poster={jess_harper_sunday_O1DhTK0_1iQ_unsplash} id="bgvid" playsInLine autoPlay muted loop>
+          <source src={Pexels_Videos_2180924} type="video/mp4" />
+        </video>
+        */}
+      </Layout>
+    )
+  }
 }
-
-export default IndexPage
