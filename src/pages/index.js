@@ -38,7 +38,7 @@ export default class extends React.Component {
           <h1 className="row-start-1 col-start-2 text-gray-100 text-5xl sm:text-6xl text-center font-semibold my-auto">
             I am<br /> what<br /> I am
           </h1>
-          <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start">Long V-neck dress <br className="hidden sm:block md:hidden" />$99.99</h2>
+          <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">Long V-neck dress <br className="hidden sm:block md:hidden" />€99.99</h2>
         </div>
 
 
