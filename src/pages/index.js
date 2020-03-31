@@ -4,8 +4,37 @@ import Layout from '../components/Layout';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 import ussama_azam_xgNSlx7DjYM_unsplash from '../images/ussama-azam-xgNSlx7DjYM-unsplash.jpg'
+import jess_harper_sunday_uRuF9ABj0NY_unsplash from '../images/jess-harper-sunday-uRuF9ABj0NY-unsplash.jpg'
+import kevin_laminto_Wac13Oopo34_unsplash from '../images/kevin-laminto-Wac13Oopo34-unsplash.jpg'
+import justin_essah_UeRbO61FMGo_unsplash from '../images/justin-essah-UeRbO61FMGo-unsplash.jpg'
 
 export default class extends React.Component {
+
+  getNextSeason() {
+    let nextSeason
+    const currentMonth = new Date().getMonth()
+
+    const winterMonths=[11, 0, 1]
+    const springMonths=[2, 3, 4]
+    const summerMonths=[5, 6, 7]
+    const autumnMonths=[8, 9, 10]
+
+    if(winterMonths.indexOf(currentMonth) !== -1){
+      nextSeason = 'Primavera'
+    }
+    else if (springMonths.indexOf(currentMonth) !== -1){
+      nextSeason = 'Verano'
+    }
+    else if (summerMonths.indexOf(currentMonth) !== -1){
+      nextSeason = 'Otoño'
+    }
+    else if (winterMonths.indexOf(currentMonth) !== -1){
+      nextSeason = 'Invierno'
+    }
+
+    return nextSeason
+
+  }
 
     // componentDidMount (props) {
     //   var vid = document.getElementById("bgvid");
@@ -29,18 +58,40 @@ export default class extends React.Component {
     // }
 
   render () {
+    const nextSeason = this.getNextSeason();
+    const currentYear = new Date().getFullYear();
+
     return (
       <Layout>
+
+        {/* Hero Content */}
         <div className="w-full md:w-2/3 mx-auto md:p-5 grid" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
-            backgroundSize: 'cover', height: '50vh',
+            backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
-          <h1 className="row-start-1 col-start-2 text-gray-100 text-5xl sm:text-6xl text-center font-semibold my-auto">
+          <h1 className="row-start-1 col-start-2 text-gray-100 text-5xl sm:text-6xl text-center font-family-montserrat-subrayada font-semibold my-auto">
             I am<br /> what<br /> I am
           </h1>
           <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">Long V-neck dress <br className="hidden sm:block md:hidden" />€99.99</h2>
         </div>
 
+        {/* Subhero Content */}
+        <div className="mt-16 w-full md:w-11/12 mx-auto md:p-5 grid gap-1 grid-cols-3 bg-orange-200" style={{
+            height: '100vh',
+            gridTemplateRows: '2fr 1fr'
+          }}>
+          <div className="col-start-2 col-end-4 row-start-1 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
+            <h1 className="text-6xl">
+              Life Imitates Art
+            </h1>
+            <h2 className="text-4xl">
+              Nueva Colección {currentYear}
+            </h2>
+          </div>
+          <img className="col-start-1 row-start-1 h-full w-full object-cover rounded-sm" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses" />
+          <img className="row-start-2 col-start-2 h-full object-cover rounded-sm align-self-center" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories" />
+          <img className="row-start-2 col-start-3 h-full w-full object-cover" src={justin_essah_UeRbO61FMGo_unsplash} alt="Watches" />
+        </div>
 
 
         {/*

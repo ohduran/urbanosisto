@@ -3,10 +3,34 @@
 @tailwind components;
 
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada&display=swap');
 
 .align-self-start{
   align-self: start;
+}
+
+.btn-indigo:active{
+  @apply bg-indigo-600;
+}
+
+.font-family-pacifico{
+  font-family: Pacifico, cursive;
+}
+
+.font-family-montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-family-montserrat-alternates{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.font-family-montserrat-subrayada{
+  font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+body{
+  @apply font-family-montserrat
 }
 
 .btn{
@@ -22,18 +46,6 @@
 }
 .btn-indigo:hover{
   @apply bg-indigo-400;
-}
-
-.btn-indigo:active{
-  @apply bg-indigo-600;
-}
-
-.font-family-pacifico{
-  font-family: Pacifico, cursive;
-}
-
-.font-family-open-sans{
-  font-family: 'Open Sans', sans-serif;
 }
 
 @tailwind utilities;

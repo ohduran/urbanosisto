@@ -9,7 +9,7 @@ const Layout = (props) => {
     <div>
 
       <main className="min-h-screen relative z-10" style={{
-          background: '#f7fafc'
+          background: '#fffaf0'
         }}>
         <Header />
         {props.children}
