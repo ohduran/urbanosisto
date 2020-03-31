@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/index.css';
 import Layout from '../components/Layout';
+import ImageCard from '../components/ImageCard';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 import ussama_azam_xgNSlx7DjYM_unsplash from '../images/ussama-azam-xgNSlx7DjYM-unsplash.jpg'
@@ -65,7 +66,7 @@ export default class extends React.Component {
       <Layout>
 
         {/* Hero Content */}
-        <div className="w-full md:w-2/3 mx-auto md:p-5 grid" style={{
+        <div className="w-full md:w-2/3 mx-auto md:p-5 grid rounded-lg shadow-lg" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
             backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
@@ -76,21 +77,22 @@ export default class extends React.Component {
         </div>
 
         {/* Subhero Content */}
-        <div className="mt-16 w-full md:w-11/12 mx-auto md:p-5 grid gap-1 grid-cols-3 bg-orange-200" style={{
-            height: '100vh',
-            gridTemplateRows: '2fr 1fr'
+        <div className="mt-16 mx-auto w-full md:p-6 grid gap-4 grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 bg-orange-200" style={{
+            height: '125vh',
           }}>
-          <div className="col-start-2 col-end-4 row-start-1 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
-            <h1 className="text-6xl">
-              Life Imitates Art
+          <div className="col-start-2 md:col-start-3 row-start-1 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
+            <h1 className="text-3xl lg:text-5xl">
+              Life<br className="sm:hidden" /> Imitates<br className="sm:hidden"/> Art
             </h1>
-            <h2 className="text-4xl">
+          </div>
+          <div className="md:col-start-2 md:row-start-3 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
+            <h2 className="text-3xl lg:text-5xl">
               Nueva Colección {currentYear}
             </h2>
           </div>
-          <img className="col-start-1 row-start-1 h-full w-full object-cover rounded-sm" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses" />
-          <img className="row-start-2 col-start-2 h-full object-cover rounded-sm align-self-center" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories" />
-          <img className="row-start-2 col-start-3 h-full w-full object-cover" src={justin_essah_UeRbO61FMGo_unsplash} alt="Watches" />
+          <ImageCard className="col-start-1 row-start-1 row-end-4 hidden md:block" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  />
+          <ImageCard className="row-start-2 row-end-4 col-start-2 md:col-start-3 object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   />
+          <ImageCard className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  />
         </div>
 
 
