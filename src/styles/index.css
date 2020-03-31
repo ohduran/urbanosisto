@@ -9,6 +9,18 @@
   align-self: start;
 }
 
+.align-self-end{
+  align-self: end;
+}
+
+.align-self-center{
+  align-self: center;
+}
+
+.justify-self-center{
+  justify-self: center;
+}
+
 .btn-indigo:active{
   @apply bg-indigo-600;
 }

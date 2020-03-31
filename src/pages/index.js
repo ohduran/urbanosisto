@@ -2,12 +2,24 @@ import React from "react";
 import '../styles/index.css';
 import Layout from '../components/Layout';
 import ImageCard from '../components/ImageCard';
+import ItemUrbanoSister from '../components/ItemUrbanoSister';
+import ItemNuevaColeccion from '../components/ItemNuevaColeccion';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 import ussama_azam_xgNSlx7DjYM_unsplash from '../images/ussama-azam-xgNSlx7DjYM-unsplash.jpg'
 import jess_harper_sunday_uRuF9ABj0NY_unsplash from '../images/jess-harper-sunday-uRuF9ABj0NY-unsplash.jpg'
 import kevin_laminto_Wac13Oopo34_unsplash from '../images/kevin-laminto-Wac13Oopo34-unsplash.jpg'
 import justin_essah_UeRbO61FMGo_unsplash from '../images/justin-essah-UeRbO61FMGo-unsplash.jpg'
+import ali_pazani_ooQotplM76c_unsplash from '../images/ali-pazani-ooQotplM76c-unsplash.jpg'
+import jacob_le_WRxSPB1s4_Q_unsplash from '../images/jacob-le-WRxSPB1s4_Q-unsplash.jpg'
+import jose_ros_photo_OOmtrEas7Zw_unsplash from '../images/jose-ros-photo-OOmtrEas7Zw-unsplash.jpg'
+import mike_von_V4cl7_0N2mc_unsplash from '../images/mike-von-V4cl7_0N2mc-unsplash.jpg'
+import warion_taipei_vSqmb2IX3DM_unsplash from '../images/warion-taipei-vSqmb2IX3DM-unsplash.jpg'
+import ed_zavala_FTQt6ueDoXw_unsplash from '../images/ed-zavala-FTQt6ueDoXw-unsplash.jpg'
+import logan_delaney_iF1xqcyYjxw_unsplash from '../images/logan-delaney-iF1xqcyYjxw-unsplash.jpg'
+import irene_kredenets_Jm_SqbqZYkY_unsplash from '../images/irene-kredenets-Jm_SqbqZYkY-unsplash.jpg'
+import olena_sergienko_O5t8nAbnGUs_unsplash from '../images/olena-sergienko-O5t8nAbnGUs-unsplash.jpg'
+import taisiia_stupak_8V61ORZxH1w_unsplash from '../images/taisiia-stupak-8V61ORZxH1w-unsplash.jpg'
 
 export default class extends React.Component {
 
@@ -66,7 +78,7 @@ export default class extends React.Component {
       <Layout>
 
         {/* Hero Content */}
-        <div className="w-full md:w-2/3 mx-auto md:p-5 grid rounded-lg shadow-lg" style={{
+        <a href="#" className="w-full md:w-2/3 mx-auto md:p-5 grid rounded-lg shadow-lg" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
             backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
@@ -74,7 +86,7 @@ export default class extends React.Component {
             I am<br /> what<br /> I am
           </h1>
           <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">Long V-neck dress <br className="hidden sm:block md:hidden" />€99.99</h2>
-        </div>
+        </a>
 
         {/* Subhero Content */}
         <div className="mt-16 mx-auto w-full md:p-6 grid gap-4 grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 bg-orange-200" style={{
@@ -90,10 +102,37 @@ export default class extends React.Component {
               Nueva Colección {currentYear}
             </h2>
           </div>
-          <ImageCard className="col-start-1 row-start-1 row-end-4 hidden md:block" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  />
-          <ImageCard className="row-start-2 row-end-4 col-start-2 md:col-start-3 object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   />
-          <ImageCard className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  />
+          <a href="#" className="col-start-1 row-start-1 row-end-4 hidden md:block"><ImageCard className="rounded-lg shadow-lg" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  /></a>
+          <a href="#" className="row-start-2 row-end-4 col-start-2 md:col-start-3"><ImageCard className="rounded-lg shadow-lg object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   /></a>
+          <a href="#" className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3"><ImageCard className="rounded-lg shadow-lg" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  /></a>
         </div>
+
+        {/* URBANOSisters */}
+        <div className="my-16 mx-4">
+          <h1 className="text-4xl font-family-montserrat-subrayada">#URBANOSisters</h1>
+          <div className="mt-4 mx-6 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+            {/* Youngerva */}
+            <ItemUrbanoSister className="" src={ali_pazani_ooQotplM76c_unsplash} handle="youngerva" href="#" />
+
+            {/* Diannia */}
+            <ItemUrbanoSister className="mt-10 sm:mt-0" src={jose_ros_photo_OOmtrEas7Zw_unsplash} handle="diannia" href="#" />
+
+            {/* Crawlene */}
+            <ItemUrbanoSister className="mt-10 md:mt-0" src={jacob_le_WRxSPB1s4_Q_unsplash} handle="crawlene" href="#" />
+
+            {/* ruizmontero */}
+            <ItemUrbanoSister className="mt-10 lg:mt-0 md:hidden lg:inline" src={mike_von_V4cl7_0N2mc_unsplash} handle="ruizm_" href="#" />
+
+          </div>
+        </div>
+
+        {/* Carrousel de prendas seleccionadas*/}
+        <div className="my-16 mx-auto w-2/3 flex justify-around">
+          <ItemNuevaColeccion className="mx-3" src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
+          <ItemNuevaColeccion className="mx-3" src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
+        </div>
+
 
 
         {/*
@@ -101,27 +140,7 @@ export default class extends React.Component {
           <source src={Pexels_Videos_2180924} type="video/mp4" />
         </video>
         */}
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit earum deleniti vero dignissimos, ratione suscipit, ipsam accusamus ut vitae reiciendis quis nostrum magnam? Ullam quos mollitia ipsam voluptatem, maxime earum.</p>
-  <p>Perferendis sint culpa quasi, enim vitae fugiat libero possimus harum dolore ab qui odio rerum fugit obcaecati cumque recusandae ad officia veritatis est quo praesentium adipisci ipsam molestias. Molestias, provident!</p>
-  <p>Atque fugit, reprehenderit iure sit aperiam quibusdam fuga nulla officiis ratione quia inventore animi et cupiditate pariatur eum. Necessitatibus, recusandae ipsum voluptatem dignissimos sint explicabo molestias vero corporis consectetur quod!</p>
-  <p>Blanditiis ipsum sed expedita cum, facilis perspiciatis aut eum cumque eligendi iure architecto labore. Quis repudiandae repellendus vero cumque aspernatur temporibus. Quae ducimus delectus aspernatur saepe optio suscipit deleniti nulla.</p>
-  <p>Culpa fugiat ratione pariatur consequatur distinctio nam nostrum? Porro libero quidem temporibus? Praesentium quidem quis magni officiis animi sunt corporis molestias dolores! Amet iure omnis vero labore rerum, quas nemo?</p>
-  <p>Molestias voluptatem dicta sit a id, eaque architecto ea atque earum repellat ratione, itaque autem obcaecati quae in. Amet, error ab sapiente impedit in doloribus ad eligendi omnis eaque optio.</p>
-  <p>Veritatis totam dicta at fuga? Mollitia sunt officia eveniet eos, similique voluptatem enim aliquid obcaecati rem recusandae reprehenderit nam ab neque, fugit reiciendis ipsa facilis expedita nemo at id. Facilis?</p>
-  <p>Esse quaerat cumque ipsa ducimus ab, dolores tempore nisi quo fugiat, numquam dolorem minus? Similique asperiores, doloremque beatae voluptatem rerum consectetur reprehenderit mollitia, corporis adipisci officia esse nam maiores quae.</p>
-  <p>Similique commodi tempore dolorem dolorum fuga aliquid et architecto quae quas! At animi molestias ratione enim voluptatibus laudantium distinctio deserunt excepturi repudiandae incidunt aut quos, repellat magni corporis modi ipsam.</p>
-  <p>Velit praesentium deleniti tenetur deserunt enim, alias sint explicabo, dolores vitae, repellat tempore commodi voluptate? Neque mollitia vero debitis autem molestias, veniam minima quo accusantium. Commodi fugit aliquid rem quae?</p>
-  <p>Sequi aspernatur in debitis repellendus cupiditate vel quas similique ullam adipisci possimus! Enim ullam, incidunt adipisci fuga, harum tempora non unde voluptates possimus consequatur dolore voluptatibus beatae nobis. Expedita, enim.</p>
-  <p>Reiciendis consequatur voluptatem aspernatur nostrum magni sint veniam et temporibus eos aperiam? Neque rerum cumque maiores ex corporis illo, saepe officiis aut quaerat quos deserunt nostrum, consequatur dolorem, incidunt quisquam.</p>
-  <p>Molestiae dolorum dolores praesentium minus sunt temporibus placeat quibusdam, dolore voluptate a quod veritatis explicabo vel nobis suscipit perferendis harum maiores hic consectetur voluptas autem earum fugit ea accusantium? At!</p>
-  <p>Commodi exercitationem eos maxime et officiis tempora dolorem error veniam. Voluptatum tempore nobis id totam, vero maiores veritatis reprehenderit nulla voluptates! Earum rerum, iure at sequi quidem labore rem est.</p>
-  <p>Ab incidunt aspernatur corporis perspiciatis quam fugiat assumenda tenetur, qui, dolorum aut magnam, ex asperiores? Placeat corrupti consectetur quas magni beatae rerum! Adipisci fuga facere nesciunt expedita totam unde id!</p>
-  <p>Neque, sapiente! Culpa similique consequuntur atque molestiae itaque! Sed doloribus necessitatibus incidunt obcaecati blanditiis velit quasi nihil consequuntur iusto, quis, harum dolorum eveniet explicabo minima a adipisci hic fugiat corrupti?</p>
-  <p>Iste assumenda voluptatum quasi voluptates enim ullam est aliquam perferendis. Provident voluptatem, possimus aspernatur consectetur unde blanditiis qui neque quisquam similique nulla dignissimos facilis. Quidem, eveniet! Vero optio quaerat est?</p>
-  <p>Sequi suscipit dicta quisquam, enim odio nobis est ad adipisci, ipsum voluptates magni architecto assumenda optio aperiam harum rerum libero! Dolorum, repellat reiciendis enim tenetur doloremque at ullam odit sunt.</p>
-  <p>Blanditiis necessitatibus, inventore iusto minus ad error ex mollitia sed exercitationem tempora esse quos corporis quod. Maxime blanditiis ipsum saepe culpa veritatis tempore laboriosam laudantium impedit qui? Iure, quia quaerat?</p>
-  <p>Repellat, modi similique iste natus corporis veritatis id, dignissimos dolores excepturi culpa quam nulla dicta delectus quidem? Quo reiciendis repellendus adipisci necessitatibus quae id eveniet cum blanditiis deserunt beatae? Aliquid.</p>
-      </Layout>
+    </Layout>
     )
   }
 }
