@@ -3,6 +3,7 @@ import '../styles/index.css';
 import Layout from '../components/Layout';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
+import ussama_azam_xgNSlx7DjYM_unsplash from '../images/ussama-azam-xgNSlx7DjYM-unsplash.jpg'
 
 export default class extends React.Component {
 
@@ -30,6 +31,18 @@ export default class extends React.Component {
   render () {
     return (
       <Layout>
+        <div className="w-full md:w-2/3 mx-auto md:p-5 grid" style={{
+            backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
+            backgroundSize: 'cover', height: '50vh',
+            gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
+          <h1 className="row-start-1 col-start-2 text-gray-100 text-5xl sm:text-6xl text-center font-semibold my-auto">
+            I am<br /> what<br /> I am
+          </h1>
+          <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start">Long V-neck dress <br className="hidden sm:block md:hidden" />$99.99</h2>
+        </div>
+
+
+
         {/*
         <video poster={jess_harper_sunday_O1DhTK0_1iQ_unsplash} id="bgvid" playsInLine autoPlay muted loop>
           <source src={Pexels_Videos_2180924} type="video/mp4" />

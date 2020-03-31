@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+.align-self-start{
+  align-self: start;
+}
+
 .btn{
   @apply inline-block text-sm px-5 py-3 rounded-lg shadow-lg uppercase tracking-wider font-semibold;
 }
