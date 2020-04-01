@@ -26,21 +26,20 @@ export default class extends React.Component {
 
   render () {
     return (
-      <header className="grid grid-cols-3 gap-2 bg-white px-4 py-3 align-center font-family-open-sans" style={{
-        gridTemplateColumns: "140px 2fr 1fr",
+      <header className="grid grid-cols-2 md:grid-cols-3 bg-white px-4 py-3 font-family-montserrat-alternates" style={{
         gridTemplateRows: "25px 2fr"
       }}>
-        <h1 className="row-start-1 col-start-1 font-family-pacifico text-orange-500 text-xl">Urbano e Sisto</h1>
-        <nav className={"row-start-2 px-1 pt-0 pb-4 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-end" + (this.state.active? ' block': ' hidden')}>
-          <a href="#" className="block md:inline px-2 py-1 font-semibold rounded hover:bg-gray-200">Nuevo</a>
-          <a href="#" className="block md:inline px-2 py-1 font-semibold rounded">Ropa</a>
-          <a href="#" className="block md:inline px-2 py-1 font-semibold rounded">Accesorios</a>
+        <h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano e Sisto</h1>
+        <nav className={"row-start-2 px-1 pt-2 md:pt-0 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-center" + (this.state.active? ' ': ' hidden')}>
+          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Nuevo</a>
+          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Ropa</a>
+          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</a>
         </nav>
-        <nav className="col-start-3 flex pl-2 pt-2 align-baseline justify-end">
-          <a href="#" className="block px-2 py-1"><IconSearch className="h-4 w-4" /></a>
-          <a href="#" className="block px-2 py-1 text-sm">Español</a>
-          <a href="#" className="block px-2 py-1"><IconUser className="h-4 w-4" /></a>
-          <a href="#" className="block px-2 py-1"><IconCart className="h-4 w-4" /></a>
+        <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
+          <a href="#" className="block px-1 sm:px-4 py-1 text-sm">Español</a>
+          <a href="#" className="block px-1 sm:px-4 py-1"><IconSearch className="h-4 w-4" /></a>
+          <a href="#" className="block px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></a>
+          <a href="#" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></a>
           <span className="block px-2 py-1 md:hidden" onClick={this.toggleClass} ><IconMenu className="h-4 w-4"/></span>
         </nav>
       </header>

@@ -22,6 +22,10 @@
   justify-self: center;
 }
 
+.justify-self-end{
+  justify-self: end;
+}
+
 .btn-indigo:active{
   @apply bg-indigo-600;
 }
