@@ -10,8 +10,8 @@ const ItemUrbanoSister = ({ className, src, tagLine, price, href }) => {
         <a href={href}><img className={`h-auto object-cover rounded-lg shadow-lg`} src={src} alt={tagLine} /></a>
         <figcaption className="mt-2 font-family-montserrat text-xs">{tagLine}</figcaption>
         <div class="flex justify-between">
-          <p>{price} €</p>
-          <IconHeart className="h-6 w-6" />
+          <p className="text-xs sm:text-sm">{price} €</p>
+          <IconHeart className="h-4 w-4" />
         </div>
       </div>
     )

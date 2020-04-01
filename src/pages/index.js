@@ -1,4 +1,6 @@
 import React from "react";
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 import '../styles/index.css';
 import Layout from '../components/Layout';
 import ImageCard from '../components/ImageCard';
@@ -17,9 +19,10 @@ import mike_von_V4cl7_0N2mc_unsplash from '../images/mike-von-V4cl7_0N2mc-unspla
 import warion_taipei_vSqmb2IX3DM_unsplash from '../images/warion-taipei-vSqmb2IX3DM-unsplash.jpg'
 import ed_zavala_FTQt6ueDoXw_unsplash from '../images/ed-zavala-FTQt6ueDoXw-unsplash.jpg'
 import logan_delaney_iF1xqcyYjxw_unsplash from '../images/logan-delaney-iF1xqcyYjxw-unsplash.jpg'
-import irene_kredenets_Jm_SqbqZYkY_unsplash from '../images/irene-kredenets-Jm_SqbqZYkY-unsplash.jpg'
+import alex_holyoake_CyT6Ty3X9KY_unsplash from '../images/alex-holyoake-CyT6Ty3X9KY-unsplash.jpg'
 import olena_sergienko_O5t8nAbnGUs_unsplash from '../images/olena-sergienko-O5t8nAbnGUs-unsplash.jpg'
 import taisiia_stupak_8V61ORZxH1w_unsplash from '../images/taisiia-stupak-8V61ORZxH1w-unsplash.jpg'
+import woodwatch__Hr_uHRfImo_unsplash from '../images/woodwatch--Hr_uHRfImo-unsplash.jpg'
 
 export default class extends React.Component {
 
@@ -73,6 +76,18 @@ export default class extends React.Component {
   render () {
     const nextSeason = this.getNextSeason();
     const currentYear = new Date().getFullYear();
+
+    const swiperParams = {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      swipeToSlide: true,
+      grabCursor: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        hide: true,
+      },
+    }
 
     return (
       <Layout>
@@ -128,12 +143,22 @@ export default class extends React.Component {
         </div>
 
         {/* Carrousel de prendas seleccionadas*/}
-        <div className="my-16 mx-auto w-2/3 flex justify-around">
-          <ItemNuevaColeccion className="mx-3" src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
-          <ItemNuevaColeccion className="mx-3" src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
+        <div className="mt-16 pb-24 ml-3 md:ml-6">
+          <Swiper {...swiperParams}>
+            <div className="mx-auto my-auto">
+              <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">Catálogo</h1>
+            </div>
+            <ItemNuevaColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemNuevaColeccion src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemNuevaColeccion src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemNuevaColeccion src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemNuevaColeccion src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemNuevaColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Prenda" price="19,99" />
+              <div className="mx-auto my-auto md:px-16">
+                <a href="#"><h1 className="md:text-2xl text-xs text-center underline font-family-montserrat-alternates">Ver el resto</h1></a>
+              </div>
+          </Swiper>
         </div>
-
-
 
         {/*
         <video poster={jess_harper_sunday_O1DhTK0_1iQ_unsplash} id="bgvid" playsInLine autoPlay muted loop>
