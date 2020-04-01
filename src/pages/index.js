@@ -3,7 +3,6 @@ import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import '../styles/index.css';
 import Layout from '../components/Layout';
-import { Link } from 'gatsby';
 import ImageCard from '../components/ImageCard';
 import ItemUrbanoSister from '../components/ItemUrbanoSister';
 import ItemColeccion from '../components/ItemColeccion';

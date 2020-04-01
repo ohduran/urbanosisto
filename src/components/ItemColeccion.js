@@ -1,4 +1,5 @@
 import React from "react";
+import Img from "gatsby-image";
 import '../styles/index.css';
 import IconHeart from '../icons/Heart';
 

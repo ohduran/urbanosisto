@@ -4,4 +4,5 @@ price: "79,99"
 tagLine: 'Bolso de cadena cruzada'
 category: 'accesorios'
 tag: 'bolsos'
+new: true
 ---
