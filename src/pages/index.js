@@ -5,7 +5,7 @@ import '../styles/index.css';
 import Layout from '../components/Layout';
 import ImageCard from '../components/ImageCard';
 import ItemUrbanoSister from '../components/ItemUrbanoSister';
-import ItemNuevaColeccion from '../components/ItemNuevaColeccion';
+import ItemColeccion from '../components/ItemColeccion';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 import ussama_azam_xgNSlx7DjYM_unsplash from '../images/ussama-azam-xgNSlx7DjYM-unsplash.jpg'
@@ -87,6 +87,28 @@ export default class extends React.Component {
         draggable: true,
         hide: true,
       },
+      breakpoints: {
+      1280: {
+        slidesPerView: 5,
+        spaceBetween: 30
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 10
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10
+      }
+    }
     }
 
     return (
@@ -100,7 +122,9 @@ export default class extends React.Component {
           <h1 className="row-start-1 col-start-2 text-gray-100 text-5xl sm:text-6xl text-center font-family-montserrat-subrayada font-semibold my-auto">
             I am<br /> what<br /> I am
           </h1>
-          <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">Long V-neck dress <br className="hidden sm:block md:hidden" />€99.99</h2>
+          <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">
+            Vestido largo estampado <br className="hidden sm:block md:hidden" />99,99€
+          </h2>
         </a>
 
         {/* Subhero Content */}
@@ -146,16 +170,22 @@ export default class extends React.Component {
         <div className="mt-16 pb-24 ml-3 md:ml-6">
           <Swiper {...swiperParams}>
             <div className="mx-auto my-auto">
-              <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">Catálogo</h1>
+              <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">
+                Catálogo
+              </h1>
             </div>
-            <ItemNuevaColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Prenda" price="19,99" />
-            <ItemNuevaColeccion src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Prenda" price="19,99" />
-            <ItemNuevaColeccion src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Prenda" price="19,99" />
-            <ItemNuevaColeccion src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Prenda" price="19,99" />
-            <ItemNuevaColeccion src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Prenda" price="19,99" />
-            <ItemNuevaColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Prenda" price="19,99" />
+            <ItemColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Camisa" price="19,99" />
+            <ItemColeccion src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Abrigo" price="129,99" />
+            <ItemColeccion src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Bolso" price="99,99" />
+            <ItemColeccion src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Pantalón" price="29,99" />
+            <ItemColeccion src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Mono" price="19,99" />
+            <ItemColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Reloj" price="69,99" />
               <div className="mx-auto my-auto md:px-16">
-                <a href="#"><h1 className="md:text-2xl text-xs text-center underline font-family-montserrat-alternates">Ver el resto</h1></a>
+                <a href="#">
+                  <h1 className="md:text-2xl text-xs text-center underline font-bold font-family-montserrat-alternates">
+                    Ver más
+                  </h1>
+                </a>
               </div>
           </Swiper>
         </div>
