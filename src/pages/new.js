@@ -1,34 +1,78 @@
 import React from "react";
 import '../styles/index.css';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/Layout';
 import ItemColeccion from '../components/ItemColeccion';
-import taisiia_stupak_8V61ORZxH1w_unsplash from '../images/taisiia-stupak-8V61ORZxH1w-unsplash.jpg'
+import alex_iby_Pd585pphU_4_unsplash from '../images/alex-iby-Pd585pphU-4-unsplash.jpg'
 
-export default class extends React.Component {
+const New = () => {
 
-  render () {
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              price
+              tagLine
+              category
+              tag
+              imageUrl {
+                absolutePath
+              }
+            }
+          }
+        }
+      }
+    }
 
-    const data = [
-      {
-        'src': taisiia_stupak_8V61ORZxH1w_unsplash,
-        'price': '19,99',
-        'tagLine': 'Camisa',
-        'href': '#'
-      },
-    ]
+  `)
+
 
     return (
       <Layout>
+        <div className="mt-4 grid" style={{
+          gridTemplateColumns: "1fr 3fr",
+          gridTemplateRows: "50px 1fr"
+        }}>
+          <header className="col-start-1 col-end-3 row-start-1">
+            <h1 className="text-center font-bold font-family-montserrat-alternate text-lg">Novedades</h1>
+          </header>
+          <main className="mt-4 col-start-2 row-start-2 grid grid-cols-4 grid-rows-5 gap-4 w-11/12 mx-auto">
+            {data.allMarkdownRemark.edges.map((item) =>{
+                return (
+                  <ItemColeccion className="" src={alex_iby_Pd585pphU_4_unsplash} price={item.node.frontmatter.price} tagLine={item.node.frontmatter.tagLine} href="#" />
+                )
+              })}
+          </main>
+          <aside className="mx-4 mt-4 col-start-1 row-start-2">
+            {/* Obtains a unique set of categories out of the available options */}
+            {[...new Set(data.allMarkdownRemark.edges.map(item => item.node.frontmatter.category))].map((category) =>{
+              return(
+                <React.Fragment>
+                  <h1 className="capitalize">{category}</h1>
+                  <ol className="ml-2">
+                    {/* Obtains a unique set of tags out of the selected category */}
+                    {[...new Set(data.allMarkdownRemark.edges.map(item =>{
+                      if(item.node.frontmatter.category === category){
+                        return item.node.frontmatter.tag
+                      }
+                    }))].map((tag) =>{
+                      return(
+                        <li className="capitalize">{tag}</li>
+                      )
+                    })
 
-        <h1>Hello, world</h1>
-
-        {data.map((item) =>{
-            return (
-              <ItemColeccion className="" src={item.src} price={item.price} tagLine={item.tagLine} href={item.href} />
-            )
-          })}
-
+                  }
+                  </ol>
+                </React.Fragment>
+              )
+            })
+            }
+          </aside>
+        </div>
     </Layout>
     )
-  }
 }
+
+export default New
