@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'gatsby';
 import '../styles/index.css';
 import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
 import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
@@ -29,9 +30,9 @@ export default class extends React.Component {
       <header className="grid grid-cols-2 md:grid-cols-3 bg-white px-4 py-3 font-family-montserrat-alternates" style={{
         gridTemplateRows: "25px 2fr"
       }}>
-        <h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano e Sisto</h1>
+        <Link to="/"><h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano e Sisto</h1></Link>
         <nav className={"row-start-2 px-1 pt-2 md:pt-0 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-center" + (this.state.active? ' ': ' hidden')}>
-          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Nuevo</a>
+          <Link to="/new" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Nuevo</Link>
           <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Ropa</a>
           <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</a>
         </nav>
