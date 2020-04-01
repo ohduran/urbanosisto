@@ -1,9 +1,11 @@
 import React from "react";
 import '../styles/index.css';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import Img from "gatsby-image"
 import Layout from '../components/Layout';
-import ItemColeccion from '../components/ItemColeccion';
+import IconHeart from '../icons/Heart';
 import alex_iby_Pd585pphU_4_unsplash from '../images/alex-iby-Pd585pphU-4-unsplash.jpg'
+
 
 const New = () => {
 
@@ -17,8 +19,12 @@ const New = () => {
               tagLine
               category
               tag
-              imageUrl {
-                absolutePath
+              imageUrl{
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }
@@ -41,7 +47,14 @@ const New = () => {
           <main className="mt-4 col-start-2 row-start-2 grid grid-cols-4 grid-rows-5 gap-4 w-11/12 mx-auto">
             {data.allMarkdownRemark.edges.map((item) =>{
                 return (
-                  <ItemColeccion className="" src={alex_iby_Pd585pphU_4_unsplash} price={item.node.frontmatter.price} tagLine={item.node.frontmatter.tagLine} href="#" />
+                  <div>
+                    <a href="#"><Img fluid={item.node.frontmatter.imageUrl.childImageSharp.fluid} alt={item.node.frontmatter.tagLine} /></a>
+                    <figcaption className="mt-2 font-family-montserrat text-gray-800">{item.node.frontmatter.tagLine}</figcaption>
+                    <div class="flex justify-between">
+                      <p className="text-sm font-bold">{item.node.frontmatter.price} €</p>
+                      <IconHeart className="h-4 w-4" />
+                    </div>
+                  </div>
                 )
               })}
           </main>
