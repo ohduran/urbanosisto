@@ -3,6 +3,7 @@ import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import '../styles/index.css';
 import Layout from '../components/Layout';
+import { Link } from 'gatsby';
 import ImageCard from '../components/ImageCard';
 import ItemUrbanoSister from '../components/ItemUrbanoSister';
 import ItemColeccion from '../components/ItemColeccion';
@@ -64,7 +65,7 @@ export default class extends React.Component {
       <Layout>
 
         {/* Hero Content */}
-        <a href="#" className="w-full md:w-2/3 mx-auto md:p-5 grid rounded-lg shadow-lg" style={{
+        <a href="#" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
             backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
@@ -82,7 +83,7 @@ export default class extends React.Component {
           }}>
           <div className="col-start-2 md:col-start-3 row-start-1 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
             <h1 className="text-3xl lg:text-5xl">
-              Life<br className="sm:hidden" /> Imitates<br className="sm:hidden"/> Art
+              Life<br className="sm:hidden md:block" /> Imitates<br className="sm:hidden md:block"/> Art
             </h1>
           </div>
           <div className="md:col-start-2 md:row-start-3 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
@@ -97,16 +98,16 @@ export default class extends React.Component {
 
         {/* URBANOSisters */}
         <div className="my-16 mx-4">
-          <h1 className="text-4xl font-family-montserrat-subrayada">#URBANOSisters</h1>
-          <div className="mt-4 mx-6 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <h1 className="text-xl md:text-2xl lg:text-4xl font-family-montserrat-subrayada">#URBANOSisters</h1>
+          <div className="mt-4 mx-auto w-4/6 md:w-full grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
-            <ItemUrbanoSister className="" src={ali_pazani_ooQotplM76c_unsplash} handle="youngerva" href="#" />
+            <ItemUrbanoSister className="" src={ali_pazani_ooQotplM76c_unsplash} handle="younger" href="#" />
 
             <ItemUrbanoSister className="mt-10 sm:mt-0" src={jose_ros_photo_OOmtrEas7Zw_unsplash} handle="diannia" href="#" />
 
-            <ItemUrbanoSister className="mt-10 md:mt-0" src={jacob_le_WRxSPB1s4_Q_unsplash} handle="crawlene" href="#" />
+            <ItemUrbanoSister className="mt-10 md:mt-0 hidden sm:block" src={jacob_le_WRxSPB1s4_Q_unsplash} handle="crawlene" href="#" />
 
-            <ItemUrbanoSister className="mt-10 lg:mt-0 md:hidden lg:inline" src={mike_von_V4cl7_0N2mc_unsplash} handle="ruizm_" href="#" />
+            <ItemUrbanoSister className="mt-10 lg:mt-0 hidden sm:block md:hidden lg:block" src={mike_von_V4cl7_0N2mc_unsplash} handle="ruizm_" href="#" />
 
           </div>
         </div>
@@ -114,25 +115,33 @@ export default class extends React.Component {
         {/* Swiper */}
         <div className="mt-16 pb-24 ml-3 md:ml-6">
           <Swiper {...swiperParams}>
+
             <div className="mx-auto my-auto">
               <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">
                 Catálogo
               </h1>
             </div>
+
             <ItemColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Camisa" price="19,99" />
+
             <ItemColeccion src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Abrigo" price="129,99" />
+
             <ItemColeccion src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Bolso" price="99,99" />
+
             <ItemColeccion src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Pantalón" price="29,99" />
+
             <ItemColeccion src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Mono" price="19,99" />
+
             <ItemColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Reloj" price="69,99" />
 
-              <div className="mx-auto my-auto md:px-16">
-                <a href="#">
-                  <h1 className="md:text-2xl text-xs text-center underline font-bold font-family-montserrat-alternates">
-                    Ver más
-                  </h1>
-                </a>
-              </div>
+            <div className="mx-auto my-auto md:px-16">
+              <a href="#">
+                <h1 className="md:text-2xl text-xs text-center underline font-bold font-family-montserrat-alternates">
+                  Ver más
+                </h1>
+              </a>
+            </div>
+
           </Swiper>
         </div>
 
