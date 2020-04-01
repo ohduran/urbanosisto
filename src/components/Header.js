@@ -26,12 +26,12 @@ export default class extends React.Component {
 
   render () {
     return (
-      <header className="grid grid-cols-3 gap-4 bg-white px-4 py-3 align-center font-family-open-sans" style={{
-        gridTemplateColumns: "200px 2fr 1fr",
+      <header className="grid grid-cols-3 gap-2 bg-white px-4 py-3 align-center font-family-open-sans" style={{
+        gridTemplateColumns: "140px 2fr 1fr",
         gridTemplateRows: "25px 2fr"
       }}>
         <h1 className="row-start-1 col-start-1 font-family-pacifico text-orange-500 text-xl">Urbano e Sisto</h1>
-        <nav className={"row-start-2 px-2 pt-0 pb-4 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-end" + (this.state.active? ' block': ' hidden')}>
+        <nav className={"row-start-2 px-1 pt-0 pb-4 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-end" + (this.state.active? ' block': ' hidden')}>
           <a href="#" className="block md:inline px-2 py-1 font-semibold rounded hover:bg-gray-200">Nuevo</a>
           <a href="#" className="block md:inline px-2 py-1 font-semibold rounded">Ropa</a>
           <a href="#" className="block md:inline px-2 py-1 font-semibold rounded">Accesorios</a>
