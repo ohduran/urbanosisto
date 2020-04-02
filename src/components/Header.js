@@ -32,9 +32,9 @@ export default class extends React.Component {
       }}>
         <Link to="/"><h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano e Sisto</h1></Link>
         <nav className={"row-start-2 px-1 pt-2 md:pt-0 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-center" + (this.state.active? ' ': ' hidden')}>
-          <Link to="/catalog" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Novedades</Link>
-          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Prendas</a>
-          <a href="#" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</a>
+          <Link to="catalog/novedades" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Novedades</Link>
+          <Link to="catalog/prendas" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Prendas</Link>
+          <Link to="catalog/accesorios" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</Link>
         </nav>
         <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
           <a href="#" className="block px-1 sm:px-4 py-1 text-sm">Español</a>
