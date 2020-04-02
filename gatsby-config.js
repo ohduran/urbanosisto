@@ -7,6 +7,7 @@
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-lodash`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

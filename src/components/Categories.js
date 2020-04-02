@@ -13,7 +13,7 @@ const Catalog = () => {
         edges {
           node {
             frontmatter {
-              category
+              categories
               tag
             }
           }
@@ -23,13 +23,13 @@ const Catalog = () => {
 `)
 
     return (
-      [...new Set(data.allMarkdownRemark.edges.map(item => item.node.frontmatter.category))].map((category) =>{
+      [...new Set(data.allMarkdownRemark.edges.map(item => item.node.frontmatter.categories))].map((categories) =>{
         return(
           <React.Fragment>
-            <h1 className="capitalize">{category}</h1>
+            <h1 className="capitalize">{categories}</h1>
             <ol className="ml-2">
               {[...new Set(data.allMarkdownRemark.edges.map(item =>{
-                if(item.node.frontmatter.category === category){
+                if(item.node.frontmatter.categories === categories){
                   return item.node.frontmatter.tag
                 }
               }))].map((tag) =>{
