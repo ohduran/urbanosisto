@@ -4,8 +4,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const categoryTemplate = path.resolve("src/templates/category.js")
+  const tagTemplate = path.resolve("src/templates/tag.js")
 
-  const result = await graphql(`
+  const resultCategories = await graphql(`
     {
       categoriesGroup: allMarkdownRemark(limit: 2000) {
         group(field: frontmatter___categories) {
@@ -15,15 +16,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
+  const resultTags = await graphql(`
+    {
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tag) {
+          fieldValue
+        }
+      }
+    }
+  `)
+
   // handle errors
-  if (result.errors) {
+  if (resultCategories.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  if (resultTags.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  // Extract tag data from query
-  const categories = result.data.categoriesGroup.group
-  // Make tag pages
+  // Extract category data from query
+  const categories = resultCategories.data.categoriesGroup.group
+  // Make category pages
   categories.forEach(category => {
     createPage({
       path: `/catalog/${_.kebabCase(category.fieldValue)}/`,
@@ -33,4 +48,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+
+  // Extract tag data from query
+  const tags = resultTags.data.tagsGroup.group
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/catalog/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
+
+
 }

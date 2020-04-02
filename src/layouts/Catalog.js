@@ -1,6 +1,7 @@
 import React from 'react';
 import DefaultLayout from './Default'
 import ItemCatalogo from '../components/ItemCatalogo'
+import Categories from '../components/Categories'
 import '../styles/index.css';
 
 const CatalogLayout = (props) => {
@@ -14,15 +15,18 @@ const CatalogLayout = (props) => {
       <header className="col-start-1 col-end-3 row-start-1">
         <h1 className="text-center capitalize font-bold font-family-montserrat-alternate text-4xl">{props.title}</h1>
       </header>
-        <main className="mt-4 col-start-2 col-end-3 row-start-2 grid grid-cols-4 grid-rows-5 gap-4 w-11/12 mx-auto">
-          {props.edges.map((item) =>{
-            return (
-              <ItemCatalogo src={item.node.frontmatter.imageUrl.childImageSharp.fluid}
-                            tagLine={item.node.frontmatter.tagLine}
-                            price={item.node.frontmatter.price} />
-            )
-          })}
-        </main>
+      <main className="mt-4 col-start-2 col-end-3 row-start-2 grid grid-cols-4 grid-rows-5 gap-4 w-11/12 mx-auto">
+        {props.edges.map((item) =>{
+          return (
+            <ItemCatalogo src={item.node.frontmatter.imageUrl.childImageSharp.fluid}
+                          tagLine={item.node.frontmatter.tagLine}
+                          price={item.node.frontmatter.price} />
+          )
+        })}
+      </main>
+      <aside className="mt-4 ml-4 col-start-1 row-start-2">
+        <Categories />
+      </aside>
       </div>
     </DefaultLayout>
   )

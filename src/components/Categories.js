@@ -1,46 +1,62 @@
 import React from "react";
 import '../styles/index.css';
-import { graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/Layout';
-import ItemCatalogo from '../components/ItemCatalogo';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 
 const Catalog = () => {
 
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark{
-        edges {
-          node {
-            frontmatter {
-              categories
-              tag
+      allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___categories) {
+          fieldValue
+          edges {
+            node {
+              frontmatter {
+                tag
+              }
             }
           }
         }
       }
     }
-`)
+  `)
+
+  let [accesorios, novedades, prendas] = data.allMarkdownRemark.group
 
     return (
-      [...new Set(data.allMarkdownRemark.edges.map(item => item.node.frontmatter.categories))].map((categories) =>{
+
+      <div>
+        <Link to="/catalog">
+          <h1 className="text-center text-lg font-bold font-family-montserrat-alternates rounded-lg hover:bg-orange-400">Catálogo</h1>
+        </Link>
+
+      {[novedades, prendas, accesorios].map((item) =>{
+
+        let tags = [...new Set(item.edges.map(edge => edge.node.frontmatter.tag))]
         return(
-          <React.Fragment>
-            <h1 className="capitalize">{categories}</h1>
+          <div className="my-4">
+            <Link to={`catalog/${item.fieldValue}`}>
+              <h2 className="font-family-montserrat-alternates pl-1 rounded-lg hover:bg-orange-300 capitalize">{item.fieldValue}</h2>
+            </Link>
             <ol className="ml-2">
-              {[...new Set(data.allMarkdownRemark.edges.map(item =>{
-                if(item.node.frontmatter.categories === categories){
-                  return item.node.frontmatter.tag
+              {tags.map(tag =>{
+                if(item.fieldValue !== 'novedades'){
+                  return (
+                    <li key={tag}>
+                      <Link to={`catalog/${tag}`}>
+                        <h3 className="text-gray-600 capitalize pl-1 hover:bg-orange-200">{tag}</h3>
+                      </Link>
+                    </li>
+                  )
                 }
-              }))].map((tag) =>{
-                return(
-                  <li className="capitalize">{tag}</li>
-                )
               })}
             </ol>
-          </React.Fragment>
+
+          </div>
         )
-      })
+      })}
+      </div>
     )
 }
 
