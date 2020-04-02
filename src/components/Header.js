@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from 'gatsby';
 import '../styles/index.css';
-import Pexels_Videos_2180924 from '../videos/Pexels_Videos_2180924.mp4'
-import jess_harper_sunday_O1DhTK0_1iQ_unsplash from '../images/jess-harper-sunday-O1DhTK0_1iQ-unsplash.jpg'
 import IconCart from '../icons/Cart';
 import IconSearch from '../icons/Search';
 import IconUser from '../icons/User';
