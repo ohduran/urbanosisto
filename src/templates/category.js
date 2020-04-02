@@ -3,7 +3,7 @@ import React from "react"
 // Components
 import { Link, graphql } from "gatsby"
 
-const Categories = ({ pageContext, data }) => {
+const Category = ({ pageContext, data }) => {
   const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const categoryHeader = `${totalCount} post${
@@ -33,7 +33,7 @@ const Categories = ({ pageContext, data }) => {
 }
 
 
-export default Categories
+export default Category
 
 export const pageQuery = graphql`
   query($category: String) {

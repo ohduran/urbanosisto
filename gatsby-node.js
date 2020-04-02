@@ -3,7 +3,7 @@ const _ = require("lodash")
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const categoryTemplate = path.resolve("src/templates/categories.js")
+  const categoryTemplate = path.resolve("src/templates/category.js")
 
   const result = await graphql(`
     {

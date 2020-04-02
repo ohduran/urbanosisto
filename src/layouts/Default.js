@@ -1,13 +1,12 @@
 import React from 'react';
-import Header from './header';
-import Footer from './footer';
+import Header from '../components/header';
+import Footer from '../components/footer';
 import '../styles/index.css';
 
-const Layout = (props) => {
+const DefaultLayout = (props) => {
 
   return (
     <div>
-
       <main className="min-h-screen relative z-10" style={{
           background: '#fffaf0'
         }}>
@@ -18,4 +17,4 @@ const Layout = (props) => {
     </div>
   )
 }
-export default Layout
+export default DefaultLayout

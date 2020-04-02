@@ -2,7 +2,7 @@ import React from "react";
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import '../styles/index.css';
-import Layout from '../components/Layout';
+import DefaultLayout from '../layouts/Default';
 import ImageCard from '../components/ImageCard';
 import ItemUrbanoSister from '../components/ItemUrbanoSister';
 import ItemColeccion from '../components/ItemColeccion';
@@ -61,7 +61,7 @@ export default class extends React.Component {
     }
 
     return (
-      <Layout>
+      <DefaultLayout>
 
         {/* Hero Content */}
         <a href="#" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
@@ -144,7 +144,7 @@ export default class extends React.Component {
           </Swiper>
         </div>
 
-    </Layout>
+    </DefaultLayout>
     )
   }
 }
