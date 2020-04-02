@@ -1,6 +1,6 @@
 ---
 imageUrl: "../images/alex-holyoake-SwmgzV_-SSw-unsplash.jpg"
-price: "25,49"
+price: "26,00"
 tagLine: 'Bolso de cuero crema'
 categories: ["accesorios"]
 tag: 'bolsos'
