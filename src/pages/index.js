@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'gatsby';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import '../styles/index.css';
@@ -64,7 +65,7 @@ export default class extends React.Component {
       <DefaultLayout>
 
         {/* Hero Content */}
-        <a href="#" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
+        <Link to="catalog/novedades" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
             backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
@@ -74,7 +75,7 @@ export default class extends React.Component {
           <h2 className="row-start-2 col-start-1 text-gray-100 text-xs sm:text-base font-semibold text-center md:align-self-start md:text-left">
             Vestido largo estampado <br className="hidden sm:block md:hidden" />99,99€
           </h2>
-        </a>
+        </Link>
 
         {/* Subhero Content */}
         <div className="mt-16 mx-auto w-full md:p-6 grid gap-4 grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 bg-orange-200" style={{
@@ -115,11 +116,11 @@ export default class extends React.Component {
         <div className="mt-16 pb-24 ml-3 md:ml-6">
           <Swiper {...swiperParams}>
 
-            <div className="mx-auto my-auto">
+            <Link to="catalog" className="mx-auto my-auto">
               <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">
                 Catálogo
               </h1>
-            </div>
+            </Link>
 
             <ItemColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Camisa" price="19,99" />
 
@@ -134,11 +135,11 @@ export default class extends React.Component {
             <ItemColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Reloj" price="69,99" />
 
             <div className="mx-auto my-auto md:px-16">
-              <a href="#">
+              <Link to="catalog">
                 <h1 className="md:text-2xl text-xs text-center underline font-bold font-family-montserrat-alternates">
                   Ver más
                 </h1>
-              </a>
+              </Link>
             </div>
 
           </Swiper>

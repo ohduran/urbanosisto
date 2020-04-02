@@ -37,7 +37,9 @@ const Catalog = () => {
         return(
           <div className="my-4">
             <Link to={`catalog/${item.fieldValue}`}>
-              <h2 className="font-family-montserrat-alternates pl-1 rounded-lg hover:bg-orange-300 capitalize">{item.fieldValue}</h2>
+              <h2 className="font-bold font-family-montserrat-alternates pl-1 rounded-lg hover:bg-orange-300 capitalize">
+                {item.fieldValue}
+              </h2>
             </Link>
             <ol className="ml-2">
               {tags.map(tag =>{
