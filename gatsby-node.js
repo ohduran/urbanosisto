@@ -1,10 +1,25 @@
 const path = require("path")
 const _ = require("lodash")
+
+exports.onCreateNode = ({node, actions}) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type == 'MarkdownRemark') {
+    const slug = path.basename(node.fileAbsolutePath, '.md')
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug
+    })
+  }
+}
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const categoryTemplate = path.resolve("src/templates/category.js")
   const tagTemplate = path.resolve("src/templates/tag.js")
+  const itemTemplate = path.resolve("src/templates/item.js")
 
   const resultCategories = await graphql(`
     {
@@ -26,6 +41,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
+  const resultItems = await graphql(`
+    {
+        itemsGroup: allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+  `)
+
 
   // handle errors
   if (resultCategories.errors) {
@@ -33,6 +62,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   if (resultTags.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  if (resultItems.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
@@ -62,6 +95,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+
+  const res = await graphql(`
+  query{
+    allMarkdownRemark{
+      edges{
+        node{
+          fields{
+            slug
+          }
+        }
+      }
+    }
+  }
+`)
+
+res.data.allMarkdownRemark.edges.forEach((edge) =>{
+  createPage({
+    component: itemTemplate,
+    path: `/items/${edge.node.fields.slug}`,
+    context: {
+      slug: edge.node.fields.slug
+    }
+  })
+})
 
 
 }

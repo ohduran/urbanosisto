@@ -20,7 +20,8 @@ const CatalogLayout = (props) => {
           return (
             <ItemCatalogo src={item.node.frontmatter.imageUrl.childImageSharp.fluid}
                           tagLine={item.node.frontmatter.tagLine}
-                          price={item.node.frontmatter.price} />
+                          price={item.node.frontmatter.price}
+                          imgClassName="h-64" />
           )
         })}
       </main>
