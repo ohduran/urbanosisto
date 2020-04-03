@@ -48,7 +48,7 @@ export default class extends React.Component {
           <Link to="catalog/accesorios" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</Link>
         </nav>
         <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
-          <a href="#" className="hidden px-1 sm:px-4 py-1 text-sm">Español</a>
+          <Link to="/" className="hidden px-1 sm:px-4 py-1 text-sm">Español</Link>
           <InstantSearch searchClient={searchClient} indexName="Items">
             <SearchBox
               translations={{
@@ -60,9 +60,9 @@ export default class extends React.Component {
               />
             <SearchHits className="ais-Hits"/>
           </InstantSearch>
-          <a href="#" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></a>
-          <a href="#" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></a>
-          <span className="block px-2 py-1 md:hidden" onClick={this.toggleClass} ><IconMenu className="h-4 w-4"/></span>
+          <Link to="/" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></Link>
+          <Link to="/" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></Link>
+          <span className="block px-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
         </nav>
       </header>
     )

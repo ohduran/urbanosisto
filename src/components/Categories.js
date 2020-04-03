@@ -42,8 +42,7 @@ const Catalog = () => {
               </h2>
             </Link>
             <ol className="ml-2">
-              {tags.map(tag =>{
-                if(item.fieldValue !== 'novedades'){
+              {tags.filter(tag => item.fieldValue !== 'novedades').map(tag =>{
                   return (
                     <li key={tag}>
                       <Link to={`catalog/${tag}`}>
@@ -51,7 +50,6 @@ const Catalog = () => {
                       </Link>
                     </li>
                   )
-                }
               })}
             </ol>
 
