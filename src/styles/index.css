@@ -46,6 +46,27 @@
   font-family: 'Montserrat Subrayada', sans-serif;
 }
 
+
+.ais-SearchBox{
+  @apply w-32;
+}
+
+.ais-SearchBox-input{
+  @apply w-20 text-xs;
+}
+
+.ais-SearchBox-submitIcon, .ais-SearchBox-reset{
+  @apply ml-2;
+}
+@screen md {
+  .ais-SearchBox-input{
+    @apply w-24 text-sm;
+  }
+  .ais-SearchBox-submitIcon, .ais-SearchBox-reset{
+    @apply ml-3;
+  }
+}
+
 body{
   @apply font-family-montserrat
 }

@@ -11,7 +11,7 @@ import IconMenu from '../icons/Menu';
 
 const searchClient = algoliasearch('6NOA2X35JA', 'dcb1de01d431e5f1a041cd815879d3fb');
 
-const updateDisplayHits = () =>{
+const displayHitsIfSearchBoxIsFilled = () =>{
   if (!document.getElementsByClassName('ais-SearchBox-input')[0].value.length){
     document.getElementsByClassName('ais-Hits')[0].style.display = 'none'
   }
@@ -48,18 +48,18 @@ export default class extends React.Component {
           <Link to="catalog/accesorios" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Accesorios</Link>
         </nav>
         <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
-          <a href="#" className="block px-1 sm:px-4 py-1 text-sm">Español</a>
+          <a href="#" className="hidden px-1 sm:px-4 py-1 text-sm">Español</a>
           <div className="block px-1 sm:px-4" >
             <InstantSearch searchClient={searchClient} indexName="Items">
               <SearchBox
                 translations={{
-                  placeholder: 'Buscar producto'
+                  placeholder: 'Buscar'
                 }}
                 onChange={event => {
-                  updateDisplayHits()
+                  displayHitsIfSearchBoxIsFilled()
                 }}
                 />
-              <SearchHits className="bg-green-500" />
+              <SearchHits className="ais-Hits"/>
             </InstantSearch>
 
           </div>
