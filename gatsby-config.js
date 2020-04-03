@@ -6,8 +6,13 @@
 const queries = require("./src/utils/algolia")
 require("dotenv").config()
 
+
+module.exports = {
+
+}
 module.exports = {
   /* Your site config here */
+  pathPrefix: `/urbanosisto`,
   plugins: [
     `gatsby-plugin-lodash`,
     `gatsby-plugin-postcss`,
