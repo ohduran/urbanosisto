@@ -18,6 +18,9 @@ const Catalog = () => {
         }){
           edges {
             node {
+              fields{
+                slug
+              }
               frontmatter {
                 price
                 tagLine

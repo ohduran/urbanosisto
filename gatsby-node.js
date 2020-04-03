@@ -41,20 +41,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  const resultItems = await graphql(`
-    {
-        itemsGroup: allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-  `)
-
 
   // handle errors
   if (resultCategories.errors) {
@@ -62,10 +48,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
   if (resultTags.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-  if (resultItems.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
@@ -96,6 +78,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  // Detail page
   const res = await graphql(`
   query{
     allMarkdownRemark{
@@ -108,17 +91,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
   }
-`)
+  `)
 
-res.data.allMarkdownRemark.edges.forEach((edge) =>{
-  createPage({
-    component: itemTemplate,
-    path: `/items/${edge.node.fields.slug}`,
-    context: {
-      slug: edge.node.fields.slug
-    }
+  res.data.allMarkdownRemark.edges.forEach((edge) =>{
+    createPage({
+      component: itemTemplate,
+      path: `/items/${edge.node.fields.slug}`,
+      context: {
+        slug: edge.node.fields.slug
+      }
+    })
   })
-})
 
 
 }

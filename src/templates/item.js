@@ -17,6 +17,9 @@ export const query = graphql`
         }
       }
     ){
+          fields{
+            slug
+          }
           frontmatter{
             price
             tagLine
@@ -29,9 +32,6 @@ export const query = graphql`
                 }
               }
             }
-          }
-          fields{
-            slug
           }
         }
       }
