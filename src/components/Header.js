@@ -49,20 +49,17 @@ export default class extends React.Component {
         </nav>
         <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
           <a href="#" className="hidden px-1 sm:px-4 py-1 text-sm">Español</a>
-          <div className="block px-1 sm:px-4" >
-            <InstantSearch searchClient={searchClient} indexName="Items">
-              <SearchBox
-                translations={{
-                  placeholder: 'Buscar'
-                }}
-                onChange={event => {
-                  displayHitsIfSearchBoxIsFilled()
-                }}
-                />
-              <SearchHits className="ais-Hits"/>
-            </InstantSearch>
-
-          </div>
+          <InstantSearch searchClient={searchClient} indexName="Items">
+            <SearchBox
+              translations={{
+                placeholder: 'Buscar'
+              }}
+              onChange={event => {
+                displayHitsIfSearchBoxIsFilled()
+              }}
+              />
+            <SearchHits className="ais-Hits"/>
+          </InstantSearch>
           <a href="#" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></a>
           <a href="#" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></a>
           <span className="block px-2 py-1 md:hidden" onClick={this.toggleClass} ><IconMenu className="h-4 w-4"/></span>

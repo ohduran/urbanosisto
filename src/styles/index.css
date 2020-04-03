@@ -46,24 +46,35 @@
   font-family: 'Montserrat Subrayada', sans-serif;
 }
 
-
-.ais-SearchBox{
-  @apply w-32;
-}
-
-.ais-SearchBox-input{
-  @apply w-20 text-xs;
-}
-
 .ais-SearchBox-submitIcon, .ais-SearchBox-reset{
   @apply ml-2;
 }
+
+.ais-SearchBox{
+  @apply block pl-1 flex justify-end;
+  width: 6rem;
+}
+.ais-SearchBox-input{
+  @apply text-xs;
+  width: 3rem;
+}
 @screen md {
-  .ais-SearchBox-input{
-    @apply w-24 text-sm;
+  .ais-SearchBox{
+    @apply pl-4;
+    width: 10rem;
   }
-  .ais-SearchBox-submitIcon, .ais-SearchBox-reset{
-    @apply ml-3;
+  .ais-SearchBox-input{
+    @apply text-sm;
+    width: 5rem;
+  }
+}
+@screen lg {
+  .ais-SearchBox{
+    width: 18rem;
+  }
+  .ais-SearchBox-input{
+    @apply text-sm;
+    width: 13rem;
   }
 }
 
