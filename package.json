@@ -14,8 +14,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "algoliasearch": "^4.1.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-algolia": "^0.6.0",
     "gatsby-plugin-lodash": "^3.2.1",
     "gatsby-plugin-postcss": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
@@ -26,6 +29,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-id-swiper": "^3.0.0",
+    "react-instantsearch-dom": "^6.4.0",
     "swiper": "^5.3.6"
   },
   "devDependencies": {

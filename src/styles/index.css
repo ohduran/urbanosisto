@@ -6,6 +6,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
 
+.h-100{
+  height: 25rem;
+}
 .align-self-start{
   align-self: start;
 }
@@ -44,6 +47,38 @@
 
 .font-family-montserrat-subrayada{
   font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+.ais-SearchBox-submitIcon, .ais-SearchBox-reset{
+  @apply ml-2;
+}
+
+.ais-SearchBox{
+  @apply block pl-1 flex justify-end;
+  width: 6rem;
+}
+.ais-SearchBox-input{
+  @apply text-xs;
+  width: 3rem;
+}
+@screen md {
+  .ais-SearchBox{
+    @apply pl-4;
+    width: 10rem;
+  }
+  .ais-SearchBox-input{
+    @apply text-sm;
+    width: 5rem;
+  }
+}
+@screen lg {
+  .ais-SearchBox{
+    width: 18rem;
+  }
+  .ais-SearchBox-input{
+    @apply text-sm;
+    width: 13rem;
+  }
 }
 
 body{

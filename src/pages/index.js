@@ -65,7 +65,7 @@ export default class extends React.Component {
       <DefaultLayout>
 
         {/* Hero Content */}
-        <Link to="catalog/novedades" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
+        <Link to="items/ussama-azam-xgNSlx7DjYM-unsplash" className="w-full md:w-2/3 mx-auto md:p-5 md:mt-16 grid rounded-lg shadow-lg" style={{
             backgroundImage: `url(${ussama_azam_xgNSlx7DjYM_unsplash})`, backgroundPosition: 'top',
             backgroundSize: 'cover', height: '75vh',
             gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 0.25fr", alignItems: 'start'}} >
@@ -91,9 +91,9 @@ export default class extends React.Component {
               Nueva Colección {currentYear}
             </h2>
           </div>
-          <a href="#" className="col-start-1 row-start-1 row-end-4 hidden md:block"><ImageCard className="rounded-lg shadow-lg" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  /></a>
-          <a href="#" className="row-start-2 row-end-4 col-start-2 md:col-start-3"><ImageCard className="rounded-lg shadow-lg object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   /></a>
-          <a href="#" className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3"><ImageCard className="rounded-lg shadow-lg" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  /></a>
+          <Link to="/items/kevin-laminto-Wac13Oopo34-unsplash" className="col-start-1 row-start-1 row-end-4 hidden md:block"><ImageCard className="rounded-lg shadow-lg" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  /></Link>
+          <Link to="/items/jess-harper-sunday-uRuF9ABj0NY-unsplash" className="row-start-2 row-end-4 col-start-2 md:col-start-3"><ImageCard className="rounded-lg shadow-lg object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   /></Link>
+          <Link to="/items/justin-essah-UeRbO61FMGo-unsplash" className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3"><ImageCard className="rounded-lg shadow-lg" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  /></Link>
         </div>
 
         {/* URBANOSisters */}
@@ -122,17 +122,17 @@ export default class extends React.Component {
               </h1>
             </Link>
 
-            <ItemColeccion src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Camisa" price="19,99" />
+            <ItemColeccion href="/items/taisiia-stupak-8V61ORZxH1w-unsplash" src={taisiia_stupak_8V61ORZxH1w_unsplash} tagLine="Blusa" price="19,99" />
 
-            <ItemColeccion src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Abrigo" price="129,99" />
+            <ItemColeccion href="/items/olena-sergienko-O5t8nAbnGUs-unsplash" src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Abrigo" price="129,99" />
 
-            <ItemColeccion src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Bolso" price="99,99" />
+            <ItemColeccion href="/items/alex-holyoake-CyT6Ty3X9KY-unsplash" src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Bolso" price="99,99" />
 
-            <ItemColeccion src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Pantalón" price="29,99" />
+            <ItemColeccion href="/items/logan-delaney-iF1xqcyYjxw-unsplash" src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Pantalón" price="29,99" />
 
-            <ItemColeccion src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Mono" price="19,99" />
+            <ItemColeccion href="/items/ed-zavala-FTQt6ueDoXw-unsplash" src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Mono" price="19,99" />
 
-            <ItemColeccion src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Reloj" price="69,99" />
+            <ItemColeccion href="/items/woodwatch--Hr_uHRfImo-unsplash" src={woodwatch__Hr_uHRfImo_unsplash} tagLine="Reloj" price="69,99" />
 
             <div className="mx-auto my-auto md:px-16">
               <Link to="catalog">
