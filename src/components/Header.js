@@ -1,11 +1,24 @@
 import React from "react";
 import { Link } from 'gatsby';
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
+
 import '../styles/index.css';
+import SearchHits from '../components/SearchHits'
 import IconCart from '../icons/Cart';
-import IconSearch from '../icons/Search';
 import IconUser from '../icons/User';
 import IconMenu from '../icons/Menu';
 
+const searchClient = algoliasearch('6NOA2X35JA', 'dcb1de01d431e5f1a041cd815879d3fb');
+
+const updateDisplayHits = () =>{
+  if (!document.getElementsByClassName('ais-SearchBox-input')[0].value.length){
+    document.getElementsByClassName('ais-Hits')[0].style.display = 'none'
+  }
+  else{
+    document.getElementsByClassName('ais-Hits')[0].style.display = 'block'
+  }
+}
 
 export default class extends React.Component {
 
@@ -36,7 +49,20 @@ export default class extends React.Component {
         </nav>
         <nav className="col-start-2 md:col-start-3 flex pl-4 align-center justify-self-end justify-end">
           <a href="#" className="block px-1 sm:px-4 py-1 text-sm">Español</a>
-          <a href="#" className="block px-1 sm:px-4 py-1"><IconSearch className="h-4 w-4" /></a>
+          <div className="block px-1 sm:px-4" >
+            <InstantSearch searchClient={searchClient} indexName="Items">
+              <SearchBox
+                translations={{
+                  placeholder: 'Buscar producto'
+                }}
+                onChange={event => {
+                  updateDisplayHits()
+                }}
+                />
+              <SearchHits className="bg-green-500" />
+            </InstantSearch>
+
+          </div>
           <a href="#" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></a>
           <a href="#" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></a>
           <span className="block px-2 py-1 md:hidden" onClick={this.toggleClass} ><IconMenu className="h-4 w-4"/></span>
