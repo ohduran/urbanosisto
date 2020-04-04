@@ -20,6 +20,10 @@ const displayHitsIfSearchBoxIsFilled = () =>{
   }
 }
 
+const resetDisplayHits = () =>{
+  document.getElementsByClassName('ais-Hits')[0].style.display = 'none'
+}
+
 export default class extends React.Component {
 
   constructor(props){
@@ -56,6 +60,9 @@ export default class extends React.Component {
               }}
               onChange={event => {
                 displayHitsIfSearchBoxIsFilled()
+              }}
+              onReset={event => {
+                resetDisplayHits()
               }}
               />
             <SearchHits className="ais-Hits"/>
