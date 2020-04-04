@@ -4,6 +4,9 @@ const itemQuery = `{
   ) {
     edges {
       node {
+        fields{
+          slug
+        }
         frontmatter {
           price
           tagLine
@@ -16,8 +19,9 @@ const itemQuery = `{
 }`
 
 const flatten = arr =>
-  arr.map(({ node: { frontmatter, ...rest } }) => ({
+  arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
     ...frontmatter,
+    ...fields,
     ...rest,
   }))
 const settings = { attributesToSnippet: [`excerpt:20`] }
