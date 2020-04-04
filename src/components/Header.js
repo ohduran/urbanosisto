@@ -45,7 +45,7 @@ export default class extends React.Component {
       <header className="grid grid-cols-2 md:grid-cols-3 bg-white px-4 py-3 font-family-montserrat-alternates" style={{
         gridTemplateRows: "25px 2fr"
       }}>
-        <Link to="/"><h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano e Sisto</h1></Link>
+        <Link to="/"><h1 className="row-start-1 col-start-1 font-family-montserrat-subrayada text-lg">Urbano Sisto</h1></Link>
         <nav className={"row-start-2 px-1 pt-2 md:pt-0 md:row-start-1 md:col-start-2 md:flex md:justify-center md:align-center" + (this.state.active? ' ': ' hidden')}>
           <Link to="catalog/novedades" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Novedades</Link>
           <Link to="catalog/prendas" className="block md:inline px-2 font-semibold rounded hover:bg-gray-200">Prendas</Link>

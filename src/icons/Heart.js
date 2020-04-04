@@ -1,13 +1,30 @@
 import React from "react";
 import '../styles/index.css';
 
-const IconHeart = ({ className }) => {
+export default class extends React.Component {
 
-    return (
-      <svg className={`fill-current ${className}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path className="heroicon-ui" d="M12.76 3.76a6 6 0 0 1 8.48 8.48l-8.53 8.54a1 1 0 0 1-1.42 0l-8.53-8.54a6 6 0 0 1 8.48-8.48l.76.75.76-.75zm7.07 7.07a4 4 0 1 0-5.66-5.66l-1.46 1.47a1 1 0 0 1-1.42 0L9.83 5.17a4 4 0 1 0-5.66 5.66L12 18.66l7.83-7.83z"/>
-      </svg>
-    )
+  constructor(props){
+    super(props);
+    this.state = {
+      'liked': false,
+    }
+  }
+
+  handleClick(){
+    this.setState({liked: !this.state.liked})
+  }
+
+
+    render () {
+      return (
+        <svg
+          className={this.state.liked? `fill-current text-red-700 ${this.props.className}` : `fill-current ${this.props.className}`}
+          onClick={this.handleClick.bind(this)}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24">
+          <path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"/>
+        </svg>
+      )
+    }
+
 }
-
-export default IconHeart
