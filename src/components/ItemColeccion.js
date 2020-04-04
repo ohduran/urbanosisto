@@ -7,7 +7,7 @@ const ItemColeccion = ({ className, src, tagLine, price, href }) => {
 
     return (
       <div className={`${className}`}>
-        <Link to={href}><img className={`h-full object-cover rounded-lg shadow-lg`} src={src} alt={tagLine} /></Link>
+        <Link to={href}><img className={`h-56 md:h-full object-cover rounded-lg shadow-lg`} src={src} alt={tagLine} /></Link>
         <figcaption className="mt-2 font-family-montserrat text-gray-800">
           <Link to={href}>{tagLine}</Link>
         </figcaption>

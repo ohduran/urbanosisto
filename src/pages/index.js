@@ -28,8 +28,8 @@ export default class extends React.Component {
     const currentYear = new Date().getFullYear();
 
     const swiperParams = {
-      slidesPerView: 5,
-      spaceBetween: 30,
+      slidesPerView: 2,
+      spaceBetween: 2,
       swipeToSlide: true,
       grabCursor: true,
       scrollbar: {
@@ -39,24 +39,24 @@ export default class extends React.Component {
       },
       breakpoints: {
       1280: {
-        slidesPerView: 5,
+        slidesPerView: 6,
         spaceBetween: 30
       },
       1024: {
-        slidesPerView: 5,
+        slidesPerView: 6,
         spaceBetween: 20
       },
       768: {
-        slidesPerView: 4,
+        slidesPerView: 5,
         spaceBetween: 10
       },
       640: {
-        slidesPerView: 3,
-        spaceBetween: 20
+        slidesPerView: 4,
+        spaceBetween: 5
       },
       320: {
-        slidesPerView: 2,
-        spaceBetween: 10
+        slidesPerView: 3,
+        spaceBetween: 5
       }
     }
     }
@@ -113,11 +113,11 @@ export default class extends React.Component {
         </div>
 
         {/* Swiper */}
-        <div className="mt-16 pb-24 ml-3 md:ml-6">
+        <div className="mt-16 pb-12 md:pb-24 ml-1 mr-1">
           <Swiper {...swiperParams}>
 
             <Link to="catalog" className="mx-auto my-auto">
-              <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">
+              <h1 className="text-base md:text-lg lg:text-2xl text-center font-family-montserrat-subrayada">
                 Catálogo
               </h1>
             </Link>
