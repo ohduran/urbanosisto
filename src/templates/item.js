@@ -53,6 +53,7 @@ const Item = (props) => {
         <ItemCatalogo src={props.data.markdownRemark.frontmatter.imageUrl.childImageSharp.fluid}
                       tagLine={props.data.markdownRemark.frontmatter.tagLine}
                       price={props.data.markdownRemark.frontmatter.price}
+                      slug={props.data.markdownRemark.fields.slug}
                       imgClassName="h-100"/>
       </main>
       <aside className="mt-4 ml-4 col-start-1 row-start-2">

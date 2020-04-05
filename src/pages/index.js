@@ -86,14 +86,14 @@ export default class extends React.Component {
               Life<br className="sm:hidden md:block" /> Imitates<br className="sm:hidden md:block"/> Art
             </h1>
           </div>
-          <div className="md:col-start-2 md:row-start-3 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
+          <div className="col-start-1 row-start-2 md:col-start-2 md:row-start-3 text-center text-teal-900 font-family-montserrat-alternates" style={{ alignSelf: 'center'}}>
             <h2 className="text-3xl lg:text-5xl">
               Nueva Colección {currentYear}
             </h2>
           </div>
-          <Link to="/items/kevin-laminto-Wac13Oopo34-unsplash" className="col-start-1 row-start-1 row-end-4 hidden md:block"><ImageCard className="rounded-lg shadow-lg" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  /></Link>
-          <Link to="/items/jess-harper-sunday-uRuF9ABj0NY-unsplash" className="row-start-2 row-end-4 col-start-2 md:col-start-3"><ImageCard className="rounded-lg shadow-lg object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   /></Link>
-          <Link to="/items/justin-essah-UeRbO61FMGo-unsplash" className="row-start-1 row-end-3 col-start-1 md:col-start-2 md:col-end-3"><ImageCard className="rounded-lg shadow-lg" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  /></Link>
+          <Link to="/items/kevin-laminto-Wac13Oopo34-unsplash" className="col-start-1 row-start-1 row-end-4 hidden md:block"><ImageCard className="h-full rounded-lg shadow-lg" src={kevin_laminto_Wac13Oopo34_unsplash} alt="Dresses"  /></Link>
+          <Link to="/items/jess-harper-sunday-uRuF9ABj0NY-unsplash" className="row-start-2 row-end-4 col-start-2 md:col-start-3"><ImageCard className="h-full rounded-lg shadow-lg object-right" src={jess_harper_sunday_uRuF9ABj0NY_unsplash} alt="Accessories"   /></Link>
+          <Link to="/items/justin-essah-UeRbO61FMGo-unsplash" className="row-start-1 row-end-2 col-start-1 md:col-start-2 md:col-end-3"><ImageCard className="h-full rounded-lg shadow-lg" src={justin_essah_UeRbO61FMGo_unsplash} alt="More dresses"  /></Link>
         </div>
 
         {/* URBANOSisters */}

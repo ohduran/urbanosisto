@@ -6,23 +6,23 @@ export default class extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      'liked': false,
+      'clicked': false,
     }
   }
 
   handleClick(){
-    this.setState({liked: !this.state.liked})
+    this.setState({clicked: !this.state.clicked})
   }
 
 
     render () {
       return (
         <svg
-          className={this.state.liked? `fill-current text-red-700 ${this.props.className}` : `fill-current ${this.props.className}`}
+          className={this.state.clicked? `fill-current text-green-500 ${this.props.className}` : `fill-current ${this.props.className}`}
           onClick={this.handleClick.bind(this)}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24">
-          <path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z"/>
+          <path d="M11 9V5H9v4H5v2h4v4h2v-4h4V9h-4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/>
         </svg>
       )
     }
