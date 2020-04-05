@@ -1,6 +1,5 @@
 import React from "react";
 import '../styles/index.css';
-import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image";
 
 import {ProductConsumer} from "../context/ProductContext"

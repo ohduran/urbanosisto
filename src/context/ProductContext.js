@@ -41,7 +41,6 @@ class ProductProvider extends React.Component {
     let tempProducts = [...this.state.cart];
     const index = tempProducts.indexOf(this.findProduct(slug))
     let product = tempProducts[index]
-    let price = product.price
     product.quantity--
     if (product.quantity === 0){
       tempProducts.splice(index, 1);

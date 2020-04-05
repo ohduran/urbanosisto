@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'gatsby';
-import Img from "gatsby-image";
 import '../styles/index.css';
 import {ProductConsumer} from "../context/ProductContext"
 import DefaultLayout from '../layouts/Default';
