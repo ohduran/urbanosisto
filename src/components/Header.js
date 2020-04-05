@@ -91,8 +91,9 @@ export default class extends React.Component {
               }}
             </ProductConsumer>
 
-
-          <span className="block pr-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
+          <button className="block pr-2 py-1 md:hidden" onClick={() => {this.toggleClass()}}>
+            <IconMenu className="h-4 w-4" />
+          </button>
         </nav>
       </header>
     )

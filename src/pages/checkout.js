@@ -14,8 +14,8 @@ export default class extends React.Component {
             Puedes probarla tú mismo en <span className="underline">alvaroduran.com/urbanosisto</span><br/>
           </h2>
           <h3 className="md:text-xl mt-8 text-center">
-            <a className="underline px-2 font-semibold rounded hover:bg-gray-200" href="https://alvaroduran.com">
-              ¿Te animas a crear la tuya?
+            <a href="https://alvaroduran.com">
+              <span className="px-2 font-semibold">¿Te animas a crear la tuya?</span>
             </a>
           </h3>
         </div>
