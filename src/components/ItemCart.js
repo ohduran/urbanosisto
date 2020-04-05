@@ -5,8 +5,8 @@ import Img from "gatsby-image";
 
 import {ProductConsumer} from "../context/ProductContext"
 
-import IconAdd from '../icons/Add'
-import IconMinus from '../icons/Minus'
+import IconUp from '../icons/Up'
+import IconDown from '../icons/Down'
 
 export default class extends React.Component {
 
@@ -24,11 +24,11 @@ export default class extends React.Component {
                 <p className="ml-1 text-sm font-bold">{this.props.item.frontmatter.price}€</p>
                 <p className="ml-1 text-sm font-bold flex justify-center">
                   <button className="ml-1 mt-1" onClick={() => {value.oneLess(this.props.item.fields.slug)}}>
-                    <IconMinus className="h-4 w-4"/>
+                    <IconDown className="h-4 w-4"/>
                   </button>
                   <span>{this.props.quantity} artículo{this.props.quantity>1? 's':null}</span>
                   <button className="ml-1 mt-1" onClick={() => {value.oneMore(this.props.item.fields.slug)}}>
-                    <IconAdd className="h-4 w-4"/>
+                    <IconUp className="h-4 w-4"/>
                   </button>
                 </p>
                 <p className="ml-1 text-sm font-bold">

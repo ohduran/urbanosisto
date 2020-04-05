@@ -69,19 +69,29 @@ export default class extends React.Component {
             <SearchHits className="ais-Hits"/>
           </InstantSearch>
           <Link to="/" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></Link>
-          <Link to="/cart" className="block px-1 sm:px-4 py-1 flex">
+
             <ProductConsumer>
               {(value) =>{
-                return (
-                  <>
-                  <IconCart className={`{value.cart.length? text-green-500 : null } h-4 w-4`} />
-                  <span className={`{value.cart.length? null : 'hidden' } text-sm text-green-500`}>{value.cart.length}</span>
-                  </>
-                )
+                if(value.cart.length > 0){
+                  return (
+                    <Link to="/cart" className="block px-1 sm:px-4 py-1 flex">
+                      <IconCart className="text-green-500 h-4 w-4" />
+                      <span className="text-sm text-green-500">{value.cart.length}</span>
+                    </Link>
+                  )
+                }
+                else{
+                  return (
+                    <span className="block px-1 sm:px-4 py-1 flex">
+                      <IconCart className="h-4 w-4" />
+                    </span>
+                  )
+                }
+
               }}
             </ProductConsumer>
 
-          </Link>
+
           <span className="block px-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
         </nav>
       </header>

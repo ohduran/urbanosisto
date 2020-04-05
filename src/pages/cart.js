@@ -47,6 +47,7 @@ const Catalog = () => {
     return (
       <ProductConsumer>
         {(value) =>{
+          if(value.cart.length > 0){
           let slugs = value.cart.map(item => item.slug)
           return (
             <DefaultLayout>
@@ -64,12 +65,20 @@ const Catalog = () => {
                   )
                 }
                 <p className="mt-5 font-bold text-right text-lg">Total: {value.total}€</p>
-                <Link to="/" className="flex justify-end">
+                <Link to="/checkout" className="flex justify-end">
                   <button className="my-5 p-2 font-bold font-family-montserrat-alternates text-lg rounded-lg bg-orange-300 hover:bg-orange-500">Comenzar Pedido</button>
                 </Link>
               </main>
             </DefaultLayout>
-          )
+          )}
+          else{
+            return(
+              <DefaultLayout>
+                <p className="mt-5 font-bold text-center text-lg">La cesta está vacía</p>
+              </DefaultLayout>
+            )
+
+          }
         }}
       </ProductConsumer>
     )
