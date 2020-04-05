@@ -74,7 +74,7 @@ export default class extends React.Component {
               {(value) =>{
                 if(value.cart.length > 0){
                   return (
-                    <Link to="/cart" className="block px-1 sm:px-4 py-1 flex">
+                    <Link to="/cart" className="block px-3 sm:px-4 py-1 flex">
                       <IconCart className="text-green-500 h-4 w-4" />
                       <span className="text-sm text-green-500">{value.cart.length}</span>
                     </Link>
@@ -82,7 +82,7 @@ export default class extends React.Component {
                 }
                 else{
                   return (
-                    <span className="block px-1 sm:px-4 py-1 flex">
+                    <span className="block px-3 sm:px-4 py-1 flex">
                       <IconCart className="h-4 w-4" />
                     </span>
                   )
@@ -92,7 +92,7 @@ export default class extends React.Component {
             </ProductConsumer>
 
 
-          <span className="block px-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
+          <span className="block pr-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
         </nav>
       </header>
     )
