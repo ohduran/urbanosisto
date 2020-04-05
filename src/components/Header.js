@@ -4,6 +4,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
 
 import '../styles/index.css';
+import {ProductConsumer} from "../context/ProductContext"
 import SearchHits from '../components/SearchHits'
 import IconCart from '../icons/Cart';
 import IconUser from '../icons/User';
@@ -68,7 +69,19 @@ export default class extends React.Component {
             <SearchHits className="ais-Hits"/>
           </InstantSearch>
           <Link to="/" className="hidden px-1 sm:px-4 py-1"><IconUser className="h-4 w-4" /></Link>
-          <Link to="/" className="block px-1 sm:px-4 py-1"><IconCart className="h-4 w-4" /></Link>
+          <Link to="/cart" className="block px-1 sm:px-4 py-1 flex">
+            <ProductConsumer>
+              {(value) =>{
+                return (
+                  <>
+                  <IconCart className={`{value.cart.length? text-green-500 : null } h-4 w-4`} />
+                  <span className={`{value.cart.length? null : 'hidden' } text-sm text-green-500`}>{value.cart.length}</span>
+                  </>
+                )
+              }}
+            </ProductConsumer>
+
+          </Link>
           <span className="block px-2 py-1 md:hidden"><IconMenu className="h-4 w-4" onClick={this.toggleClass}/></span>
         </nav>
       </header>

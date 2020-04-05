@@ -1,34 +1,78 @@
 import React from "react";
+import { Link } from 'gatsby';
+import Img from "gatsby-image";
 import '../styles/index.css';
 import {ProductConsumer} from "../context/ProductContext"
 import DefaultLayout from '../layouts/Default';
-import ImageCard from '../components/ImageCard';
+import ItemCart from '../components/ItemCart';
 
-export default class extends React.Component {
+import { graphql, useStaticQuery } from "gatsby"
 
-  render () {
-    return(
-    <DefaultLayout>
-    <div className="mt-4 grid" style={{
-      gridTemplateColumns: "1fr 6fr",
-      gridTemplateRows: "50px 1fr"
-    }}>
-    <header className="col-start-1 col-end-3 row-start-1">
-      <h1 className="text-center capitalize font-bold font-family-montserrat-alternate text-4xl">Cart</h1>
-    </header>
-    <main className="my-8 col-start-2 col-end-3 row-start-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-11/12 mx-auto">
+const Catalog = () => {
+
+  const data = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(
+        filter: {
+          frontmatter: {}
+        },
+        sort: {
+          fields: [frontmatter___categories]
+          order: ASC
+        }){
+          edges {
+            node {
+              fields{
+                slug
+              }
+              frontmatter {
+                price
+                tagLine
+                categories
+                tag
+                imageUrl{
+                  childImageSharp {
+                    fluid(maxWidth: 800) {
+                      ...GatsbyImageSharpFluid
+                    }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+    return (
       <ProductConsumer>
-      {(hello) =>{
-        return <h1>{hello}</h1>
-      }}
+        {(value) =>{
+          let slugs = value.cart.map(item => item.slug)
+          return (
+            <DefaultLayout>
+              <main className="w-11/12 md:w-2/3 mx-auto my-2 md:my-16">
+                {
+                  data.allMarkdownRemark.edges
+                    .filter(item => slugs.indexOf(item.node.fields.slug) >= 0)
+                    .map(
+                    (item) =>{
+                      const quantity = value.cart[slugs.indexOf(item.node.fields.slug)].quantity
+                      return(
+                        <ItemCart key={item.node.fields.slug} item={item.node} quantity={quantity} />
+                      )
+                    }
+                  )
+                }
+                <p className="mt-5 font-bold text-right text-lg">Total: {value.total}€</p>
+                <Link to="/" className="flex justify-end">
+                  <button className="my-5 p-2 font-bold font-family-montserrat-alternates text-lg rounded-lg bg-orange-300 hover:bg-orange-500">Comenzar Pedido</button>
+                </Link>
+              </main>
+            </DefaultLayout>
+          )
+        }}
       </ProductConsumer>
-    </main>
-    <aside className="mt-4 ml-4 col-start-1 row-start-2">
-      Aside
-    </aside>
-    </div>
-
-    </DefaultLayout>
     )
-  }
 }
+
+export default Catalog

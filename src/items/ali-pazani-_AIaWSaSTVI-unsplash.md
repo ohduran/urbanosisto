@@ -1,6 +1,6 @@
 ---
 imageUrl: "../images/ali-pazani-_AIaWSaSTVI-unsplash.jpg"
-price: "23,00"
+price: 23
 tagLine: 'Jersey Turtleneck'
 categories: ["prendas", "novedades"]
 tag: 'jerseys'
