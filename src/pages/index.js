@@ -16,7 +16,6 @@ import jacob_le_WRxSPB1s4_Q_unsplash from '../images/jacob-le-WRxSPB1s4_Q-unspla
 import jose_ros_photo_OOmtrEas7Zw_unsplash from '../images/jose-ros-photo-OOmtrEas7Zw-unsplash.jpg'
 import mike_von_V4cl7_0N2mc_unsplash from '../images/mike-von-V4cl7_0N2mc-unsplash.jpg'
 import ed_zavala_FTQt6ueDoXw_unsplash from '../images/ed-zavala-FTQt6ueDoXw-unsplash.jpg'
-import logan_delaney_iF1xqcyYjxw_unsplash from '../images/logan-delaney-iF1xqcyYjxw-unsplash.jpg'
 import alex_holyoake_CyT6Ty3X9KY_unsplash from '../images/alex-holyoake-CyT6Ty3X9KY-unsplash.jpg'
 import olena_sergienko_O5t8nAbnGUs_unsplash from '../images/olena-sergienko-O5t8nAbnGUs-unsplash.jpg'
 import taisiia_stupak_8V61ORZxH1w_unsplash from '../images/taisiia-stupak-8V61ORZxH1w-unsplash.jpg'
@@ -127,8 +126,6 @@ export default class extends React.Component {
             <ItemColeccion href="/items/olena-sergienko-O5t8nAbnGUs-unsplash" src={olena_sergienko_O5t8nAbnGUs_unsplash} tagLine="Abrigo" price="129,99" />
 
             <ItemColeccion href="/items/alex-holyoake-CyT6Ty3X9KY-unsplash" src={alex_holyoake_CyT6Ty3X9KY_unsplash} tagLine="Bolso" price="99,99" />
-
-            <ItemColeccion href="/items/logan-delaney-iF1xqcyYjxw-unsplash" src={logan_delaney_iF1xqcyYjxw_unsplash} tagLine="Pantalón" price="29,99" />
 
             <ItemColeccion href="/items/ed-zavala-FTQt6ueDoXw-unsplash" src={ed_zavala_FTQt6ueDoXw_unsplash} tagLine="Mono" price="19,99" />
 
